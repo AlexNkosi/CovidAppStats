@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+.fa{
+      vertical-align: center;
+  }
+.fas{
+      font-size: 50px;
+      
+        margin: 0 auto;
+        padding: .2em;
+        color: rgb(19, 114, 19);
+}
+.center {
+    margin: 0 auto;
+    font-family: 'Arvo', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1em;
+    padding: .2em;
+    text-transform: uppercase;
+    color: white;    
+
+}
+.stats{
+
+    font-size: 3em;
+}
+.card-Data, .card{
+ 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     transition: 1s;
+    background: #212121;
+
+}
+.card-Data:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: rotateY(25deg);
+    transition: .5s;
+}
+
+.text{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 2.5em;
+}
+  
+  .card + .fas:hover{
+    color: darkgray;
+    background-color: darkgreen;
+  }
+
+  
+body {
+  background: #212121;
+  padding: 50px 0;
+}
+
+.nav {
+  font-family: 'Titillium Web';
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.nav * {
+  box-sizing: border-box;
+  transition: all .35s ease;
+}
+
+.nav li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: .5em 1em;
+  padding: 0;
+}
+
+.nav a {
+  padding: .5em .8em;
+  color: red;
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav a::before,
+.nav a::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+.nav a::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid #3E8914;
+  border-right: 3px solid #2E640F;
+  transform: translate(-100%, 50%);
+}
+
+.nav a:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #2E640F;
+  border-left: 3px solid #3E8914;
+  transform: translate(100%, -50%)
+}
+
+.nav a:hover:before,
+.nav a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+.nav a:hover {
+  color: #3DA35D;
+}
+
+
+
+.bg{
+    background-image: url('/assets/corona.jpg');
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.tab{
+  color: aliceblue;
+  height: 25em;
+ 
+}
+.tab button {
+  margin: 0 auto;
+}

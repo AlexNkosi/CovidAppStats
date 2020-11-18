@@ -1,0 +1,137 @@
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+<div class="bg">
+
+    <div>
+
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+                <p class="category">Information</p>
+
+                <div class="card">
+                    <div class="card-header">
+                <mat-tab-group animationDuration="2000ms" class="tab">
+        
+        
+                <mat-tab class=" " [label]="covidTabInfoLabels[1]">
+
+
+                <mat-accordion *ngIf="covidTabContentInfo">
+                       
+                    <mat-expansion-panel *ngFor="let info of covidTabContentInfo; let i=index" (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{info.Question}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                       
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <p> {{info.Answer}}</p>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+
+                
+                </mat-tab>
+
+               
+
+                <mat-tab  [label]="covidTabInfoLabels[0]" class="tab">
+
+                    <p> Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+
+                    Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness 
+                    and recover without requiring special treatment.  Older people, and those with underlying medical problems like cardiovascular disease,
+                    diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.</p>
+                   
+                   
+
+                    <button mat-button class="col-md-12 " (click)="openCharData(1)" > View Data</button>
+                </mat-tab>
+        
+                <mat-tab [label]="covidTabInfoLabels[2]">
+
+                    
+                    <button mat-button class="col-md-12" > View Data</button>
+                </mat-tab>
+             </mat-tab-group>
+                    </div>
+                </div>
+             
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+  
+  
+
+ <div class="container justify-content-center " @loadData  @land >
+
+    
+    <div class="row offset-md-4 mt-2">
+        <span class="text col-md-12  ml-2 p-5">Current SA Statistics</span>
+    </div>
+
+    <div class="row offset-md-2" >
+
+        
+        <div  class="col-md-3 card card-Data bg-dark mt-2 ml-2 ">
+
+            
+            <i class=" fa-vials fas"></i>
+            <span class="center stats">{{statsData[statsData.length-1].Confirmed |number}}</span>
+
+            <span class="center">Tests Conducted</span>
+
+        </div>
+
+        <div class="col-md-3 card card-Data bg-dark mt-2 ml-2">
+
+            <i class="fa-praying-hands fas"></i>
+            <span class="center stats">{{statsData[statsData.length-1].Deaths |number }}</span>
+
+            <span class="center">Death</span>
+
+        </div>
+        <div class="col-md-3 card card-Data bg-dark mt-2 ml-2">
+
+            <i class="fa-user-plus fas"></i>
+            <span class="center stats">{{statsData[statsData.length-1].Active |number}} </span>
+            <span class="center">New Cases </span>
+
+        </div>
+
+    </div>
+
+    <div class="row offset-md-4 mt-2">
+
+
+        <div  class="col-md-6 card card-Data bg-dark ml-2">
+            <i class="fas fa-heartbeat" aria-hidden="true"></i>
+            <span class="center stats">{{statsData[statsData.length-1].Recovered |number}}</span>
+
+            <span class="center" >Recovered</span>
+        </div>
+
+        
+
+    </div>
+
+
+
+
+    </div>
+
+    
+  <footer class="footer text-center ">
+    <p>Covid Statistics</p>
+</footer>
+</div>

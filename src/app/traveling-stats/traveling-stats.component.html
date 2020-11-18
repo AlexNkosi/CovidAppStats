@@ -1,0 +1,150 @@
+
+
+
+
+
+<div class="row ">
+
+
+
+    <div class="col-md-3">
+        <div class="cases-by-country" id="cases-by-country">
+            <div class="cases-by-country__top">
+                <div class="header-content d-flex">
+                    <h4>Cases by Country</h4>
+                </div>
+            </div>
+    
+            <div class="cases-by-country__bottom">
+                <ul class="cases-country-lists" *ngFor="let data of worldCountriesSummery">
+                    <li><h6 class="country-name">{{data.Country}}</h6><span class="cases-no infected">{{data.TotalConfirmed |number}}</span></li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="col-xl-6 offset-xl-1">
+    <div class="row mtn-25 worldwide-stats">
+        <div class="col-md-6">
+            <div class="tracker-block-style-1">
+                <div class="tracker-block">
+                    <div class="tracker-block__icon">
+                        <img src="assets/images/corona-icon-red.png" alt="corona-icon">
+                    </div>
+                    <div class="tracker-block__content">
+                        <h4>Coronavirus Cases</h4>
+                        <h2><span class="cases-no infected">{{worldData.TotalConfirmed |number}}</span> <span class="new-no">(+<span class="today_infected">{{worldData.NewRecovered |number}}</span>)</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="tracker-block-style-1">
+                <div class="tracker-block">
+                    <div class="tracker-block__icon">
+                        <img src="assets/images/corona-icon-green.png" alt="corona-icon">
+                    </div>
+                    <div class="tracker-block__content">
+                        <h4>Total Recovered</h4>
+                        <h2><span class="cases-no recovered">{{worldData.TotalRecovered |number}}</span> <span class="new-no">(+<span class="today_recovered">{{worldData.NewRecovered|number}}</span>)</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="tracker-block-style-1">
+                <div class="tracker-block">
+                    <div class="tracker-block__icon">
+                        <img src="assets/images/corona-icon-red.png" alt="corona-icon">
+                    </div>
+                    <div class="tracker-block__content">
+                        <h4>Total Death</h4>
+                        <h2><span class="cases-no deaths">{{worldData.TotalDeaths |number }}</span> <span class="new-no">(+<span class="today_deaths">{{worldData.NewDeaths |number}}</span>)</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="tracker-block-style-1">
+                <div class="tracker-block">
+                    <div class="tracker-block__icon">
+                        <img src="assets/images/corona-icon-red.png" alt="corona-icon">
+                    </div>
+                    <div class="tracker-block__content">
+                        <h4>Active Cases</h4>
+                        <h2><span class="cases-no current_cases">{{worldData.NewConfirmed |number}}</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 country-choose-stats">
+            <div class="tracker-block tracker-block--2">
+                <div class="tracker-block__header with-option">
+                    <div class="section-head">
+                        <h2>Coronavirus(COVID-19)</h2>
+                        <!-- <p>Updated <span class="last-update">10</span> minutes ago</p> -->
+                    </div>
+                    <div class="select-country">
+                        <label for="select1" class="sr-only">Country</label>
+                        <select #selectedCountry (change)="showCountryStats(selectedCountry.value)" class="country select2-hidden-accessible" id="select1" name="country" data-select2-id="select2-data-select1" tabindex="-1"  aria-hidden="true"  >
+                            
+                            
+                            <option value="all" data-image="https://live.hasthemes.com/html/8/jibanu-preview/jibanu/assets/img/global.png" data-select2-id="select2-data-2-i42h">Worldwide</option>
+                            
+                            
+                            
+                            <option  [class]="data.CountryCode" data-image="https://disease.sh/assets/img/flags/af.png" 
+                            *ngFor="let data of worldCountriesSummery; index as i" value={{i}} >{{data.Country}}</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="tracker-block__body">
+                    <div class="track-item">
+                        <p class="track-item__title">Confirmed</p>
+                        <h4 class="track-item__no infected">{{singleCountryStats.TotalConfirmed |number}}</h4>
+                    </div>
+
+                    <div class="track-item">
+                        <p class="track-item__title track-item__title-deaths">Deaths</p>
+                        <h4 class="track-item__no deaths">{{singleCountryStats.TotalDeaths|number}}</h4>
+                    </div>
+
+                    <div class="track-item">
+                        <p class="track-item__title track-item__title-recovered">Recovered</p>
+                        <h4 class="track-item__no recovered">{{singleCountryStats.TotalRecovered |number}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+<div class=" row ">
+
+
+    <canvas id="chart" class="col-md-6 col-sm-9 offset-md-6 " width="150px" style="background-color: black;"> 
+
+
+
+
+    </canvas>
+
+</div> 
