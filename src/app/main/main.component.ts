@@ -1,3 +1,5 @@
+import { PreventionsComponent } from './../preventions/preventions.component';
+import { SymptomsComponent } from './../symptoms/symptoms.component';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Istatistics } from 'src/shared/istatistics';
 import { StatsService } from 'src/shared/stats.service';
@@ -59,7 +61,7 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   panelOpenState
 
-  covidTabInfoLabels = ["What is COVID19", "FAQ", "Sypmtoms"];
+  covidTabInfoLabels = ["Details On COVID-19",  "Sypmtoms", "Prevention",];
 
   covidTabContentInfo:any[] = ["is a virus"];
 
@@ -70,6 +72,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
   ngOnInit() {
 
+    // getting all data from the service
     this.stats.getCountrySatats().subscribe(data=> {
       this.statsData = data;
       this.updateDataStat(data);
@@ -102,22 +105,45 @@ export class MainComponent implements OnInit, AfterViewInit {
 
    ngAfterViewInit() {
 
-
+    //testing my data is loaded 
     this.showData();
 
 
   }
 
   
- openCharData(prodID:Number ):void {
+ openCharData():void {
 
-  this.dialog.open( ViewDataComponent,{
+  this.dialog.open(ViewDataComponent,{
     
     width:'1000px',
     data:this.statsData
    });
 
- 
   }
+
+  
+ 
+   openSymptomsComponent( ):void {
+
+    this.dialog.open(SymptomsComponent,{
+      
+      width:'1000px',height: '500px',
+      data:[]
+     });
+    }
+
+    
+   openPreventionComponent( ):void {
+
+    this.dialog.open(PreventionsComponent,{
+      
+      width:'1000px',
+      data:[]
+     });
+    }
+
+    
+
  
 }

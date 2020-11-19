@@ -4,16 +4,18 @@
 
     <button mat-icon-button class="example-icon " aria-label="Example icon-button with menu icon">
 
-      <img  [routerLink]="['home']" src="../assets/images/corona-icon-red.png" alt="logo">
+      <img  [routerLink]="['/home']" src="../assets/images/corona-icon-red.png" alt="logo">
    </button>
-   <span class="" [routerLink]="['/home']" >Covid Statistics App</span>
-   <span class="example-spacer"></span>
-   <button mat-icon-button class="example-icon favorite-icon"  [routerLink]="['/stats']" aria-label="Example icon-button with heart icon">
+   <span class="" [routerLink]="['/home']" >Covid Statistics For Traveling </span>
+   <span class="spacer"></span>
+   <button mat-flat-button class=" btn btn-link "  [routerLink]="['/statistics']" >
      Statistics
    </button>
-   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-   
-  </button>
+
+   <!-- <a  mat-raised-button  class="btn btn-link" [routerLink]="['/symptoms']"> Symptoms </a>
+ 
+   <a  mat-raised-button  class="btn btn-link" [routerLink]="['/prevention']"> Prevention </a> -->
+
  </mat-toolbar>
 
  

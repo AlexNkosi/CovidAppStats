@@ -19,7 +19,23 @@ export class TravelingStatsComponent implements OnInit {
 
   worldCountriesSummery:ICountriesData[];
 
-  singleCountryStats:ICountriesData =
+  currentCountryStats:ICountriesData =
+    {
+      "Country": "Afghanistan",
+      "CountryCode": "AF",
+      "Slug": "afghanistan",
+      "NewConfirmed": 225,
+      "TotalConfirmed": 43628,
+      "NewDeaths": 12,
+      "TotalDeaths": 1638,
+      "NewRecovered": 23,
+      "TotalRecovered": 35160,
+      "Date": new Date("2020-11-18T07:01:52Z"),
+      "Premium": {}
+  
+  };
+  
+  CountryToTravelToStats:ICountriesData =
     {
       "Country": "Afghanistan",
       "CountryCode": "AF",
@@ -36,18 +52,12 @@ export class TravelingStatsComponent implements OnInit {
   };
 
   worldData:IGlobalData;
-
+  isActiveCountry1:boolean= false;
   
-  initializeSingleCountry(){
-    
-    
-    this.singleCountryStats.TotalConfirmed = this.worldData.TotalConfirmed;
-      
-    this.singleCountryStats.TotalDeaths = this.worldData.TotalDeaths;
-    
-    this.singleCountryStats.TotalRecovered = this.worldData.TotalRecovered;
-    
-  }
+  isActiveCountry2:boolean= false;
+  isSafeActive1:boolean = false;
+  isSafeActive2:boolean = false;
+  
 
 
   displayData(data){
@@ -63,14 +73,86 @@ export class TravelingStatsComponent implements OnInit {
 
 
   }
-  showCountryStats(index){
+  showCountryStats(identify,index){
 
-    console.log(index);
-    console.log(this.worldCountriesSummery[index]);
-    this.singleCountryStats = this.worldCountriesSummery[index];
+
+    identify === 1 ? this.currentCountryStats = this.worldCountriesSummery[index] : this.CountryToTravelToStats = this.worldCountriesSummery[index]; 
+
+    
+    this.compareStats(this.currentCountryStats, this.CountryToTravelToStats);
 
   }
+
+  compareStats(country1:ICountriesData , country2:ICountriesData){
+
+    this.isActiveCountry1 = country1.TotalConfirmed > country2.TotalConfirmed ? true : false;
+    this.isActiveCountry2 = country1.TotalConfirmed < country2.TotalConfirmed ? true : false;
+
+    
+    this.isSafeActive1 = country1.TotalDeaths < country2.TotalDeaths ? true : false;
+    this.isSafeActive2 = country1.TotalDeaths > country2.TotalDeaths ? true : false;
+
+
+    this.barChartData(country1 , country2);
+    
+    
+
+  }
+
   lineGraph: any = [];
+
+
+
+
+  barChartData(country1:ICountriesData, country2:ICountriesData){
+    
+  let currentCountry = {
+    label: country1.Country,
+    data: [country1.TotalDeaths],
+    backgroundColor: country1.TotalDeaths < country2.TotalDeaths ? 'rgba(1, 137, 42)':'rgba(245, 9, 5)' ,
+    borderWidth: 0,
+    type: "bar"
+  };
+
+  let countryToTravelToo = {
+    label: country2.Country,
+    data: [country2.TotalDeaths],
+    backgroundColor: country2.TotalDeaths < country1.TotalDeaths ? 'rgba(1, 137, 42)':'rgba(245, 9, 5)',
+    borderWidth: 0,
+    type: "bar"
+  };
+
+    let planetData = {
+    labels: ["total Death"],
+    datasets: [currentCountry, countryToTravelToo]
+
+};
+
+this.lineGraph = new Chart('chart', {
+  type: 'bar',
+  data: {
+    labels: ["total Death country -"+country1.Country +" AND "+country2.Country ],
+    datasets: [currentCountry ,countryToTravelToo ]
+  },
+  options: {
+    title: {
+      text: '',
+      display: true
+      
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+
+
+  }
 
   ngOnInit(): void {
     this.statisticDataService.getWorldDataSummery().subscribe(data=>{
@@ -80,32 +162,5 @@ export class TravelingStatsComponent implements OnInit {
     })
       
 
-      this.lineGraph = new Chart('chart', {
-        type: 'line',
-        data: {
-          labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
-          datasets: [{
-            label: 'Total Deaths Each Month',
-            data: [2_977, 45_249, 239_022, 386_162, 526_178, 693_725, 870_499, 1_025_848, 1_202_175, 1_314_801],
-            fill: true,
-            lineTension: 0.5,
-            borderColor: '#4680ff',
-            borderWidth: 2
-          }]
-        },
-        options: {
-          title: {
-            text: '',
-            display: true
-          },
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-      });
     }
 }

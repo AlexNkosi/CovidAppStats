@@ -15,7 +15,9 @@ import { MainComponent } from './main/main.component';
 import {FormsModule } from '@angular/forms';
 import { TravelingStatsComponent } from './traveling-stats/traveling-stats.component';
 import { ViewDataComponent } from './view-data/view-data.component';
-import { StatisticsComponent } from './statistics/statistics.component'
+import { StatisticsComponent } from './statistics/statistics.component';
+import { SymptomsComponent } from './symptoms/symptoms.component';
+import { PreventionsComponent } from './preventions/preventions.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { StatisticsComponent } from './statistics/statistics.component'
     MainComponent,
     TravelingStatsComponent,
     ViewDataComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    SymptomsComponent,
+    PreventionsComponent
   ],
   imports: [
     BrowserModule,
