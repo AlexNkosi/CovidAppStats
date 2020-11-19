@@ -3596,5 +3596,33 @@
         "Recovered": 695496,
         "Active": 36459,
         "Date": "2020-11-16T00:00:00Z"
+    },
+    {
+        "Country": "South Africa",
+        "CountryCode": "",
+        "Province": "",
+        "City": "",
+        "CityCode": "",
+        "Lat": "0",
+        "Lon": "0",
+        "Confirmed": 754256,
+        "Deaths": 20432,
+        "Recovered": 696820,
+        "Active": 37004,
+        "Date": "2020-11-17T00:00:00Z"
+    },
+    {
+        "Country": "South Africa",
+        "CountryCode": "",
+        "Province": "",
+        "City": "",
+        "CityCode": "",
+        "Lat": "0",
+        "Lon": "0",
+        "Confirmed": 757144,
+        "Deaths": 20556,
+        "Recovered": 701534,
+        "Active": 35054,
+        "Date": "2020-11-18T00:00:00Z"
     }
 ]

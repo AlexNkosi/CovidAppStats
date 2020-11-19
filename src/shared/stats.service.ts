@@ -10,10 +10,10 @@ export class StatsService {
 
   SAstatsUrl:string = "api/SACovidStats.json"; 
 
-  // worldData: string = "https://covid.ourworldindata.org/data/owid-covid-data.json";
+   //https://documenter.getpostman.com/view/10808728/SzS8rjbc#81415d42-eb53-4a85-8484-42d2349debfe
+
    worldData: string = "api/summary.json";
 
- // worldData = "https://opendata.ecdc.europa.eu/covid19/casedistribution/json;"
 
 
   covid19iData = "api/FAQData.json";

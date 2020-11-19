@@ -78,11 +78,7 @@ export class MainComponent implements OnInit, AfterViewInit {
       this.updateDataStat(data);
     })
 
-    this.stats.getTabInfoData().subscribe(data => {
-      this.covidTabContentInfo = data;
-      this.update(data);
-  
-    })
+    
   }
 
 
@@ -128,7 +124,7 @@ export class MainComponent implements OnInit, AfterViewInit {
 
     this.dialog.open(SymptomsComponent,{
       
-      width:'1000px',height: '500px',
+      width:'1000px',
       data:[]
      });
     }

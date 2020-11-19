@@ -1,194 +1,206 @@
-
-<div class="bg">
+<div class="bg ">
 
     <div>
 
-        <div class="container mt-5">
+        <div class="container mt-5 col-md-12 ">
             <div class="row">
-              <div class="col-md-10 ml-auto col-xl-6 mr-auto">
-                <p class="category">Information</p>
+                <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+                    <p class="category">Covid-19 Information</p>
 
-                <div class="card">
-                    <div class="card-header">
-                <mat-tab-group animationDuration="2000ms" class="tab">
-        
-        
-                <mat-tab class=" " [label]="covidTabInfoLabels[1]">
-
-<!-- 
-                <mat-accordion *ngIf="covidTabContentInfo">
-                       
-                    <mat-expansion-panel *ngFor="let info of covidTabContentInfo; let i=index" (opened)="panelOpenState = true"
-                                         (closed)="panelOpenState = false">
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            {{info.Question}}
-                        </mat-panel-title>
-                        <mat-panel-description>
-                       
-                        </mat-panel-description>
-                      </mat-expansion-panel-header>
-                      <p> {{info.Answer}}</p>
-                    </mat-expansion-panel>
-                  </mat-accordion>
-
-                   -->
-                   <div class="section-wrapper">
-                    <div class="row no-gutters justify-content-center">
-                        <div class="col-md-6 col-12 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                            <div class="service-item style-2">
-                                <div class="service-inner">
-                                    <div class="service-thumb">
-                                        <img src="../../assets/images/symptoms/05.jpg" alt="service">
-                                    </div>
-                                    <div class="service-content">
-                                        <h4>Confusion</h4>
-                                         
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                            <div class="service-item style-2">
-                                <div class="service-inner">
-                                    <div class="service-thumb">
-                                        <img src="../../assets/images/symptoms/02.jpg" alt="service">
-                                    </div>
-                                    <div class="service-content">
-                                        <h4>Hot Fever</h4>
-                                         
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button mat-button class="col-md-12 " class="btn btn-success" (click)="openSymptomsComponent()" > View More Symptoms</button>
-                
-                    </div>
-                   </div>
-
-                  
-                </mat-tab>
-
-               
-
-                <mat-tab  [label]="covidTabInfoLabels[0]" class="tab">
-
-                    <div class="service-item style-2">
-                    <p class="info"> Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
-
-                    Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness 
-                    and recover without requiring special treatment.  Older people, and those with underlying medical problems like cardiovascular disease,
-                    diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.</p>
-                   
-                </div>
-
-                    <button mat-button class="col-md-12 " (click)="openCharData()" > View Chart Data</button>
-                </mat-tab>
-        
-                <mat-tab [label]="covidTabInfoLabels[2]">
+                    <div class="card">
+                        <div class="card-header">
+                            <mat-tab-group animationDuration="1000ms" class="tab">
 
 
-                     <div class="section-wrapper">
-            <div class="row no-gutters">
-                <div class="col-md-6 col-12 wow fadeInUp" data-wow-delay="0.3s"
-                    style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="service-left">
-                       
-                        <div class="row no-gutters justify-content-center">
-                            <div class="col-12">
-                                <div class="service-item style-2">
-                                    <div class="service-inner">
-                                        <div class="service-thumb">
-                                            <img src="../../assets/images/prevention/01.jpg" alt="service">
-                                        </div>
-                                        <div class="service-content">
-                                            <h4>Wash your hands sanitizer</h4>
+                                <mat-tab class=" " [label]="covidTabInfoLabels[1]">
+
+
+                                    <div class="section-wrapper">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-md-6 col-12 wow fadeInUp" data-wow-delay="0.7s"
+                                                style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                                                <div class="service-item style-2">
+                                                    <div class="service-inner">
+                                                        <div class="service-thumb">
+                                                            <img src="../../assets/images/symptoms/05.jpg"
+                                                                alt="service">
+                                                        </div>
+                                                        <div class="service-content">
+                                                            <h4>Confusion</h4>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12 wow fadeInUp" data-wow-delay="0.4s"
+                                                style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                                                <div class="service-item style-2">
+                                                    <div class="service-inner">
+                                                        <div class="service-thumb">
+                                                            <img src="../../assets/images/symptoms/02.jpg"
+                                                                alt="service">
+                                                        </div>
+                                                        <div class="service-content">
+                                                            <h4>Hot Fever</h4>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <button mat-button class="col-md-12 " class="btn btn-success bg-dark"
+                                                (click)="openSymptomsComponent()"> View More Symptoms</button>
 
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+
+
+                                </mat-tab>
+
+
+
+                                <mat-tab [label]="covidTabInfoLabels[0]" class="tab">
+
+                                    <div class="service-item style-2">
+                                        <p class="card details" style="font-size:25px"> Coronavirus disease (COVID-19)
+                                            is an infectious disease caused by a newly discovered coronavirus.
+
+                                            Most people infected with the COVID-19 virus will experience mild to
+                                            moderate respiratory illness
+                                            and recover without requiring special treatment. Older people, and those
+                                            with underlying medical problems like cardiovascular disease,
+                                            diabetes, chronic respiratory disease, and cancer are more likely to develop
+                                            serious illness.</p>
+
+                                    </div>
+
+                                    <button mat-button class="col-md-12 " (click)="openCharData()"> View Chart
+                                        Data</button>
+                                </mat-tab>
+
+                                <mat-tab [label]="covidTabInfoLabels[2]">
+
+
+                                    <div class="section-wrapper">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-6 col-12 wow fadeInUp" data-wow-delay="0.3s"
+                                                style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                                <div class="service-left">
+
+                                                    <div class="row no-gutters justify-content-center">
+                                                        <div class="col-12">
+                                                            <div class="service-item style-2">
+                                                                <div class="service-inner">
+                                                                    <div class="service-thumb">
+                                                                        <img src="../../assets/images/prevention/01.jpg"
+                                                                            alt="service">
+                                                                    </div>
+                                                                    <div class="service-content">
+                                                                        <h4>Wash your hands sanitizer</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 wow fadeInUp" data-wow-delay="0.4s"
+                                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                                            <div class="service-right">
+                                                <div class="row no-gutters justify-content-center">
+                                                    <div class="col-12">
+                                                        <div class="service-item style-2">
+                                                            <div class="service-inner">
+                                                                <div class="service-thumb">
+                                                                    <img src="../../assets/images/prevention/05.jpg" alt="service">
+                                                                </div>
+                                                                <div class="service-content">
+                                                                    <h4>Avoid contact with sick people</h4>
                         
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>  
+                                    <button mat-button class="col-md-12 btn btn-primary"
+                                        (click)="openPreventionComponent()"> View More Prevention</button>
+                                </mat-tab>
+                            </mat-tab-group>
                         </div>
                     </div>
-                </div>
-            </div>
-                     </div>
-                    
-                    <button mat-button class="col-md-12 btn btn-primary" (click)="openPreventionComponent()"> View More Prevention</button>
-                </mat-tab>
-             </mat-tab-group>
+
+                    <div @loadData @land>
+
+                        <p class="category">Current SA Statistics</p>
+
+
+                        <div class="row offset-md-2">
+
+
+                            <div class="col-md-3 card card-Data bg-dark mt-2 ml-2 ">
+
+
+                                <i class=" fa-vials fas"></i>
+                                <span class="center stats">{{statsData[statsData.length-1].Confirmed |number}}</span>
+
+                                <span class="center">Tests Conducted</span>
+
+                            </div>
+
+                            <div class="col-md-3 card card-Data bg-dark mt-2 ml-2">
+
+                                <i class="fa-praying-hands fas"></i>
+                                <span class="center stats">{{statsData[statsData.length-1].Deaths |number }}</span>
+
+                                <span class="center">Death</span>
+
+                            </div>
+                            <div class="col-md-3 card card-Data bg-dark mt-2 ml-2">
+
+                                <i class="fa-user-plus fas"></i>
+                                <span class="center stats">{{statsData[statsData.length-1].Active |number}} </span>
+                                <span class="center">New Cases </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row offset-md-4 mt-2">
+
+
+                            <div class="col-md-6 card card-Data bg-dark ml-2">
+                                <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                                <span class="center stats">{{statsData[statsData.length-1].Recovered |number}}</span>
+
+                                <span class="center">Recovered</span>
+                            </div>
+
+
+                        </div>
                     </div>
+
                 </div>
-             
-              </div>
             </div>
         </div>
     </div>
 
 
-  
-  
-
- <div class="container justify-content-center " @loadData  @land >
-
-    
-    <div class="row offset-md-4 mt-2">
-        <span class="text col-md-12  ml-2 p-5">Current SA Statistics</span>
-    </div>
-
-    <div class="row offset-md-2" >
-
-        
-        <div  class="col-md-3 card card-Data bg-dark mt-2 ml-2 ">
-
-            
-            <i class=" fa-vials fas"></i>
-            <span class="center stats">{{statsData[statsData.length-1].Confirmed |number}}</span>
-
-            <span class="center">Tests Conducted</span>
-
-        </div>
-
-        <div class="col-md-3 card card-Data bg-dark mt-2 ml-2">
-
-            <i class="fa-praying-hands fas"></i>
-            <span class="center stats">{{statsData[statsData.length-1].Deaths |number }}</span>
-
-            <span class="center">Death</span>
-
-        </div>
-        <div class="col-md-3 card card-Data bg-dark mt-2 ml-2">
-
-            <i class="fa-user-plus fas"></i>
-            <span class="center stats">{{statsData[statsData.length-1].Active |number}} </span>
-            <span class="center">New Cases </span>
-
-        </div>
-
-    </div>
-
-    <div class="row offset-md-4 mt-2">
-
-
-        <div  class="col-md-6 card card-Data bg-dark ml-2">
-            <i class="fas fa-heartbeat" aria-hidden="true"></i>
-            <span class="center stats">{{statsData[statsData.length-1].Recovered |number}}</span>
-
-            <span class="center" >Recovered</span>
-        </div>
-
-        
-
-    </div>
 
 
 
 
-    </div>
 
-    
-  <footer class="footer text-center ">
-    <p>Covid Statistics</p>
-</footer>
+
+
+
+
+    <footer class="footer text-center ">
+        <p>Covid Statistics</p>
+    </footer>
 </div>
